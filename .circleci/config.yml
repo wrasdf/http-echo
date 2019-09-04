@@ -26,10 +26,7 @@ workflows:
       - e2e
   tagged-build:
     jobs:
-      - e2e
       - deploy:
-          requires:
-            - e2e
           filters:
             branches:
               only: master
