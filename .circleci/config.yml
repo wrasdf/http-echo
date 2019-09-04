@@ -15,6 +15,7 @@ jobs:
     steps:
       - checkout
       - run:
+          context: Docker
           name: Deploy to Docker Hub
           command: |
             echo $DOCKER_USER
