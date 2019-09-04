@@ -21,6 +21,9 @@ jobs:
 
 workflows:
   version: 2
+  untagged-build:
+    jobs:
+      - e2e
   tagged-build:
     jobs:
       - deploy:
