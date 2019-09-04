@@ -30,6 +30,6 @@ workflows:
           context: Docker
           filters:
             branches:
-              only: master
+              ignore: /.*/
             tags:
               only: /^v.*/
