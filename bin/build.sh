@@ -2,7 +2,7 @@
 set -eo pipefail
 
 if [[ "$#" -ne 1 ]]; then
-  echo "Usage: bin/build <version>"
+  echo "Usage: bin/build.sh <version>"
   exit 1
 fi
 
