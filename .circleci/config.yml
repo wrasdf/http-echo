@@ -9,13 +9,11 @@ jobs:
           command: |
             make go
             make e2e
-
   deploy:
     machine: true
     steps:
       - checkout
       - run:
-          context: Docker
           name: Deploy to Docker Hub
           command: |
             echo $DOCKER_USER
@@ -28,6 +26,7 @@ workflows:
   tagged-build:
     jobs:
       - deploy:
+          context: Docker
           filters:
             branches:
               only: master
