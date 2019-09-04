@@ -1,13 +1,14 @@
 version: 2.1
 jobs:
-  ut:
+  e2e:
     machine: true
     steps:
       - checkout
       - run:
-          name: Unit Test
+          name: E2E Test
           command: |
-            echo "Unit Test"
+            make go
+            make e2e
 
   deploy:
     machine: true
@@ -16,16 +17,15 @@ jobs:
       - run:
           name: Deploy to Docker Hub
           command: |
-            echo ${CIRCLE_TAG}
+            ./binbuild.sh ${CIRCLE_TAG}
 
 workflows:
   version: 2
-  untagged-build:
-    jobs:
-      - ut
   tagged-build:
     jobs:
       - deploy:
+          requires:
+            - e2e
           filters:
             branches:
               only: master
