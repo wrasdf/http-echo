@@ -32,6 +32,6 @@ workflows:
             - e2e
           filters:
             branches:
-              only: master
+              ignore: /.*/
             tags:
               only: /^v.*/
