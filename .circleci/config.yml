@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Deploy to Docker Hub
           command: |
-            ./binbuild.sh ${CIRCLE_TAG}
+            ./bin/build.sh ${CIRCLE_TAG}
 
 workflows:
   version: 2
