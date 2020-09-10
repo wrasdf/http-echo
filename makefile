@@ -1,8 +1,7 @@
-.PHONY: go sh
+.PHONY: go sh e2e
 
 go:
-	docker-compose build go
-	docker-compose run --rm -d --service-ports go
+	./bin/run.sh
 
 e2e:
 	./bin/e2e.sh

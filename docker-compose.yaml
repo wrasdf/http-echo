@@ -21,3 +21,11 @@ services:
       - .:/go/src/server/
     entrypoint:
       - sh
+
+  trivy:
+    image: aquasec/trivy:0.10.2
+    working_dir: /go/src/server/
+    volumes:
+      - ".:/go/src/server/"
+      - "./cache:/root/.cache/"
+      - "/var/run/docker.sock:/var/run/docker.sock"

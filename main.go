@@ -8,7 +8,7 @@ import (
 )
 
 const DefaultPort = "8080";
-const DefaultEchoString = "It works";
+const DefaultEchoString = "Hello World.";
 
 func getServerPort() (string) {
     port := os.Getenv("SERVER_PORT");

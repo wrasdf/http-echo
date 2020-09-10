@@ -1,7 +1,7 @@
-FROM golang:1.12.9-alpine3.10 AS base
+FROM golang:1.15.2-alpine3.12 AS base
 
 WORKDIR /go/src/server/
-RUN apk add --no-cache gcc musl-dev ca-certificates git bash curl
+RUN apk add --upgrade gcc musl-dev ca-certificates git bash curl
 
 COPY . ./
 
