@@ -19,7 +19,5 @@ services:
     working_dir: /go/src/server/
     volumes:
       - .:/go/src/server/
-    build:
-      context: .
     entrypoint:
       - sh
